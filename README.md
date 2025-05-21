@@ -1,6 +1,7 @@
 # State-Constrained Offline Reinforcment Learning
 
-Pytorch implementation of State-constrained Deep Q-learning (StaCQ).
+Pytorch implementation of State-constrained Deep Q-learning (StaCQ). The paper can be found [here](https://openreview.net/forum?id=KcR8ykFlHA).
+
 StaCQ is an offline deep learning method that uses a learned formulation of state rechability to find higher performing policies than its batch-constrained counterparts.
 
 
