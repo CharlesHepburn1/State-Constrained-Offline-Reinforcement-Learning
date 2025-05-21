@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-# State-constrained Offline Reinforcement Learning
-=======
 # State-Constrained Offline Reinforcment Learning
 
 Pytorch implementation of State-constrained Deep Q-learning (StaCQ).
