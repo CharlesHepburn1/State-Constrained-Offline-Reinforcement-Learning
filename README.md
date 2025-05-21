@@ -20,6 +20,3 @@ To recreate the results in the paper:
 
 ### bibtex
 (to follow)
-
-   
->>>>>>> cd28849f3045efd1b130f23c2df662e384f0b130
