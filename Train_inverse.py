@@ -17,7 +17,7 @@ import d4rl
 
 # Load environment
 environment = 'Halfcheetah'
-env_name = 'halfcheetah-expert-v2'
+env_name = 'halfcheetah-medium-expert-v2'
 env = gym.make(env_name)
 dataset = d4rl.qlearning_dataset(env)
 
