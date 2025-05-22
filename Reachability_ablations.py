@@ -16,12 +16,12 @@ import sys
 
 # Load environment
 
-environment = 'Walker2d' #'Halfcheetah' #'Halfcheetah'
-env_name =  'walker2d-medium-v2'  #'halfcheetah-random-v2' #"halfcheetah-expert-v2"
-norm = 'linf' #'l2'    #'l1'  #'none'
-load_minmax = True
+environment = 'Walker2d' 
+env_name =  'walker2d-medium-v2' 
+norm = 'linf' #'l2'    #'l1' 
+load_minmax = False
 # build_rtree = False
-delta_X = 0.1 #5.0 #i.e. epsilon in the paper   ### 0.01, 0.05,  0.1, 0.5, 1.0, 5.0, 10.0
+delta_X = 0.1 
 
 
 env = gym.make(env_name)
@@ -32,7 +32,6 @@ min_action = env.action_space.low[0]
 max_action = env.action_space.high[0]
 
 dataset = d4rl.qlearning_dataset(env)
-
 
 seed = 42
 offset = 100
@@ -54,7 +53,6 @@ next_states = torch.Tensor((dataset["next_observations"]-st_mean)/st_std)
 dones = torch.Tensor(dataset["terminals"])
 # replay_buffer = [states, actions, rewards, next_states, dones]
 print("...data conversion complete")
-
 
 done_traj = np.zeros((len(states),1))
 for i in range(len(states)):
@@ -183,7 +181,6 @@ if not load_minmax:
     end = time.time()
     print("Time taken = ", end - start, "seconds")
 
-
     np.save(f"Reachability_indexes/Ablations/Mins_{env_name}",mins)
     np.save(f"Reachability_indexes/Ablations/Maxs_{env_name}",maxes)
 else:
@@ -196,8 +193,6 @@ if SorNS == 'S':
 elif SorNS == 'NS':
     states_to_insert = np.concatenate((next_states, next_states), axis=1)
 
-
-
 start = time.time()
 p = index.Property()
 p.dat_extension = 'data'
@@ -208,7 +203,6 @@ for i in range(len(states)):
     idx.insert(i, states_to_insert[i])
 end = time.time()
 print(end-start)
-
 
 start = time.time()
 reach_nst = [[]]*len(states)
