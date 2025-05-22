@@ -89,22 +89,6 @@ class Actor(nn.Module):
 
         return a
 
-class Forward(nn.Module):
-    def __init__(self, state_dim, action_dim, hidden_dim=256):
-        super(Forward, self).__init__()
-
-        self.l1 = nn.Linear(state_dim+action_dim, hidden_dim)
-        self.l2 = nn.Linear(hidden_dim, hidden_dim)
-        self.l3 = nn.Linear(hidden_dim, state_dim)
-
-    def forward(self, state, action):
-        out =F.relu(self.l1(torch.cat([state, action], dim=-1)))
-        out = F.relu(self.l2(out))
-        out = self.l3(out)
-
-        return out
-
-
 class Agent(object):
     def __init__(self, state_dim, action_dim, max_action, normal_variance=0.1, batch_size=256, gamma=0.99, tau=0.005,
                  lr=3e-4, policy_noise=0.2,policy_noise_act = 0.2, noise_clip=0.5, policy_freq=2, lmbda=0.5,
