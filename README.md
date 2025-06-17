@@ -20,11 +20,12 @@ To recreate the results in the paper:
    `StaCQ_multistep_test_LOOP.py`
 
 ### bibtex
-@article{hepburn2024state,
+```
+@article{hepburn2025state,
   title={State-Constrained Offline Reinforcement Learning},
   author={Hepburn, Charles A and Jin, Yue and Montana, Giovanni},
   journal={Transactions on Machine Learning Research},
   \url{https://openreview.net/forum?id=KcR8ykFlHA}
   year={2025}
 }
-
+```
